@@ -18,6 +18,9 @@ function MovieCard({movie}) {
                 <button className={`favourite-btn ${favourite ? "active" : ""}`} onClick={onFavouriteClick}>
                     ♥
                 </button>
+                <button className={`watchlist-btn ${favourite ? "active" : ""}`} onClick={onFavouriteClick}>
+                    ★
+                </button>
             </div>
         </div>
         <div className="movie-info">
