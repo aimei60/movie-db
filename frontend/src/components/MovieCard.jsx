@@ -1,5 +1,6 @@
-import "../css/MovieCard.css"
-import { useMovieContext } from "../contexts/MovieContext"
+import "../css/MovieCard.css";
+import { useMovieContext } from "../contexts/MovieContext";
+import { useWatchlistContext } from "../contexts/WatchlistContext";
 
 function MovieCard({movie}) {
     const {isFavourite, addToFavourites, removeFromFavourites} = useMovieContext()
@@ -11,6 +12,16 @@ function MovieCard({movie}) {
         else addToFavourites(movie)
     }
 
+    const {addToWatchlist, removeFromWatchlist, isInWatchlist} = useWatchlistContext()
+    const watchlist = isInWatchlist(movie.id)
+
+    function onWatchlistClick(e) {
+        e.preventDefault()
+        if (watchlist) removeFromWatchlist(movie.id)
+        else addToWatchlist(movie)
+            
+    }
+
     return <div className="movie-card">
         <div className="movie-poster">
             <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title}/>
@@ -18,7 +29,7 @@ function MovieCard({movie}) {
                 <button className={`favourite-btn ${favourite ? "active" : ""}`} onClick={onFavouriteClick}>
                     ♥
                 </button>
-                <button className={`watchlist-btn ${favourite ? "active" : ""}`} onClick={onFavouriteClick}>
+                <button className={`watchlist-btn ${watchlist ? "active" : ""}`} onClick={onWatchlistClick}>
                     ★
                 </button>
             </div>

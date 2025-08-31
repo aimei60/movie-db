@@ -1,10 +1,12 @@
 import "./css/App.css";
 import Favourites from "./pages/Favourites";
 import Home from "./pages/Home";
+import WatchList from "./pages/Watchlist";
 import { Routes, Route } from "react-router-dom";
 import { MovieProvider } from "./contexts/MovieContext";
 import NavBar from "./components/NavBar";
 import { useEffect, useState } from "react";
+import { WatchlistProvider } from "./contexts/WatchlistContext";
 
 // dark and light mode set up
 function getInitialMode() {
@@ -45,17 +47,22 @@ export default function App() {
 
 //home page details
   return (
-    <MovieProvider>
+  <MovieProvider>
+    <WatchlistProvider>
       <NavBar />
       <main className="main-content">
-        <button onClick={toggleMode} style={{ alignSelf: "flex-end", marginBottom: "1rem" }}>
+        <button
+          onClick={toggleMode}
+          style={{ alignSelf: "flex-end", marginBottom: "1rem" }}>
           Switch to {nextLabel}
         </button>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/favourites" element={<Favourites />} />
+          <Route path="/watchlist" element={<WatchList />} />
         </Routes>
       </main>
-    </MovieProvider>
-  );
+    </WatchlistProvider>
+  </MovieProvider>
+);
 }
