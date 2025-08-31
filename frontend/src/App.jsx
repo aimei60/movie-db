@@ -51,11 +51,7 @@ export default function App() {
     <WatchlistProvider>
       <NavBar />
       <main className="main-content">
-        <button
-          onClick={toggleMode}
-          style={{ alignSelf: "flex-end", marginBottom: "1rem" }}>
-          Switch to {nextLabel}
-        </button>
+        <button onClick={toggleMode} style={{ alignSelf: "flex-end", marginBottom: "1rem" }}> Switch to {nextLabel}</button>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/favourites" element={<Favourites />} />

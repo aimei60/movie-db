@@ -51,10 +51,10 @@
 .favourite-btn {
   position: absolute;
   top: 1rem;
-  right: 1rem;
+  right: 4.5rem;
   color: white;
   font-size: 1.5rem;
-  padding: 0.5rem;
+  padding: 0.2rem;
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 50%;
   width: 40px;
@@ -70,7 +70,32 @@
 }
 
 .favourite-btn.active {
-  color: #e658da;
+  color: #f90258;
+}
+
+.watchlist-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: white;
+  font-size: 1.5rem;
+  padding: 0.2rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.watchlist-btn:hover {
+  background-color: rgba(211, 138, 235, 0.8);
+}
+
+.watchlist-btn.active {
+  color: #ece33a;
 }
 
 .rating-select {
@@ -116,7 +141,8 @@
     padding: 0.75rem;
   }
 
-  .favourite-btn {
+  .favourite-btn, 
+  .watchlist-btn {
     width: 32px;
     height: 32px;
     font-size: 1.2rem;
