@@ -4,6 +4,8 @@ To learn about React, I followed along this tutorial [**Tech With Tim React tuto
 
 ## Live Demo
 
+[**View the live project here**](https://aimei60.github.io/movie-db/)
+
 ## Technologies Used
 
 - React

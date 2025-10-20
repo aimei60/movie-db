@@ -1,5 +1,5 @@
 // frontend/src/services/api.js
-const BASE = import.meta.env.BASE_URL || "/"; // '/movie-db/' on Pages, '/' locally
+const BASE = import.meta.env.BASE_URL || "/"; // /movie-db/ on Pages or '/' locally
 
 async function getJSON(path) {
   const res = await fetch(BASE + path);
