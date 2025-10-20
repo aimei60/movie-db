@@ -1,20 +1,25 @@
-const API_KEY = import.meta.env.VITE_API_KEY;
-const BASE_URL = import.meta.env.VITE_BASE_URL;
+// frontend/src/services/api.js
+const BASE = import.meta.env.BASE_URL || "/"; // '/movie-db/' on Pages, '/' locally
 
-// request to API and returns movie results
+async function getJSON(path) {
+  const res = await fetch(BASE + path);
+  if (!res.ok) {
+    const text = await res.text();
+    throw new Error(`HTTP ${res.status} for ${BASE + path}\n${text.slice(0,150)}...`);
+  }
+  return res.json();
+}
+
 export const getPopularMovies = async () => {
-  const response = await fetch(`${BASE_URL}/movie/popular?api_key=${API_KEY}`);
-  const data = await response.json();
-  return data.results;
+  const data = await getJSON("data/movies.json");
+  return Array.isArray(data) ? data : [];
 };
 
-//searches for movies using query (makes the query URL-safe with encodeURIComponent)
 export const searchMovies = async (query) => {
-  const response = await fetch(
-    `${BASE_URL}/search/movie?api_key=${API_KEY}&query=${encodeURIComponent(
-      query
-    )}`
+  const q = (query || "").toLowerCase();
+  const all = await getPopularMovies();
+  return all.filter(
+    (m) =>
+      m.title?.toLowerCase().includes(q)
   );
-  const data = await response.json();
-  return data.results;
 };
