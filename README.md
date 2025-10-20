@@ -11,7 +11,7 @@ A movie search app built with React. Users can search for movies, add them to a 
 - React
 - JavaScript (ES6+)
 - Vite
-- CSS
+- CSS3
 
 ## What I learned 
 
@@ -33,4 +33,4 @@ Here is a preview of the Movie DB
 ## Credits
 
 - This project was inspired by [**Tech With Tim React tutorial**](https://www.youtube.com/watch?v=G6D9cBaLViA&t=1201s).
-- Movie images are powdered by TMDB.
+- Movie images are sourced from TMDB.
