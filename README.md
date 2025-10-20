@@ -22,7 +22,7 @@ To learn about React, I followed along this tutorial [**Tech With Tim React tuto
 
 Here is a preview of the Movie DB
 
-![Screenshot of the movie db](screenshots/s1.png)
-![Screenshot of the movie db](screenshots/s2.png)
-![Screenshot of the movie db](screenshots/s3.png)
-![Screenshot of the movie db](screenshots/s4.png)
+![Screenshot of the movie db](/frontend/src/screenshots/s1.png)
+![Screenshot of the movie db](/frontend/src/screenshots//s2.png)
+![Screenshot of the movie db](/frontend/src/screenshots//s3.png)
+![Screenshot of the movie db](/frontend/src/screenshots//s4.png)
