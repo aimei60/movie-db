@@ -1,5 +1,5 @@
 import "./css/App.css";
-import Favourites from "./pages/Favourites";
+import Favourites from "./pages/favourites";
 import Home from "./pages/Home";
 import WatchList from "./pages/Watchlist";
 import { Routes, Route } from "react-router-dom";
